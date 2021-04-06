@@ -25,7 +25,7 @@ while($counter<$json-> count){
 
 
 
-$results50=array_chunk($results, 50);
+$results50=array_chunk($results, 50, true);
 echo '<pre>';
 echo print_r($results50[2]);
 echo '</pre>';
@@ -43,6 +43,9 @@ if($user_input<count($results50)&&$user_input>=0):
 echo '<pre> You are requesting:';
 echo print_r($results50[$user_input]);
 echo '</pre>';
+
+else:
+    echo 'something else';
 endif;
 
 ?>

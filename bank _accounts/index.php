@@ -24,6 +24,7 @@ function validate_username($username){
 
 }
 validate_username($username);
+echo '<hr>';
 
 
         function validate_weekday($day) {
@@ -81,18 +82,15 @@ validate_username($username);
         echo '<hr>';
 
         function validate_school_email($email_addr) {
-            $domain_name=array_pop(explode('@',$email_addr));
-            echo '<pre>';
-            echo print_r( $domain_name);
-            echo '</pre>';
+            $domain_name=explode('@',$email_addr);
+            
             if(
-$email_addr = filter_var($email_addr, FILTER_VALIDATE_EMAIL)
-
-
+                $email_addr = filter_var($email_addr, FILTER_VALIDATE_EMAIL)&&
+                in_array('bc.fi', $domain_name)
 )
- { echo 'TRUE';} 
- else {echo 'FALSE';}
-            // TODO: Add solution code here
+                { echo 'TRUE: ';} 
+                else {echo 'FALSE: ';}
+            
         }
 
         echo 'test_student@bc.fi is a valid school email: ' . validate_school_email('test_student@bc.fi'); // true

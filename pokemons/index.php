@@ -49,3 +49,15 @@ else:
 endif;
 
 ?>
+
+<script>
+async function GetPokemons() {
+  let resp = await fetch(
+    "formatted_data.json"
+  );
+  let json = await resp.json();
+  
+  console.log(json);
+}
+GetPokemons();
+</script>

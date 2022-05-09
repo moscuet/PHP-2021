@@ -23,8 +23,6 @@ while($counter<$json-> count){
     $counter++;
 }
 
-
-
 $results50=array_chunk($results, 50, true);
 echo '<pre>';
 echo print_r($results50[2]);
